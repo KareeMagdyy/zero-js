@@ -787,11 +787,22 @@ for (let i = friends.indexOf('Ahmed'); i < friends.length; i++){
 ///////////////////////
 let start = 0;
 let swappedName = "elZerO";
+let outputStringArray = [];
+let outputString = '';
+let newChar = '';
 
 for (let i = start; i<swappedName.length; i++){
     if (swappedName[i] == swappedName[i].toUpperCase()) {
-        console.log(swappedName[i].toLowerCase());
+        newChar = swappedName[i].toLowerCase();
     }else {
-        console.log(swappedName[i].toUpperCase());
+        newChar = swappedName[i].toUpperCase();
     }
+    outputString += newChar;
+    outputStringArray.push(newChar);
 }
+console.log(outputString);
+console.log(outputStringArray.join(''));
+
+// Output
+"ELzERo"
+/////////////////////
