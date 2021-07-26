@@ -755,7 +755,7 @@ for (;;) {
   console.log(index);
     index -= jump;
     if ( index < jump+jump){
-        break;
+      break;
     }
 }
 
@@ -772,7 +772,7 @@ let friendNum = friends.indexOf('Sayed');
 
 for (let i = friends.indexOf('Ahmed'); i < friends.length; i++){
     if (friends[i][friends.indexOf('Ahmed')] === letter.toUpperCase()){
-        continue;
+      continue;
     }
     console.log(`${friendNum++} => ${friends[i]}`);
 }
@@ -793,9 +793,9 @@ let newChar = '';
 
 for (let i = start; i<swappedName.length; i++){
     if (swappedName[i] == swappedName[i].toUpperCase()) {
-        newChar = swappedName[i].toLowerCase();
+      newChar = swappedName[i].toLowerCase();
     }else {
-        newChar = swappedName[i].toUpperCase();
+      newChar = swappedName[i].toUpperCase();
     }
     outputString += newChar;
     outputStringArray.push(newChar);
@@ -806,3 +806,43 @@ console.log(outputStringArray.join(''));
 // Output
 "ELzERo"
 /////////////////////
+
+let start = 0;
+let mix = [1, 2, 3, "A", "B", "C", 4];
+
+for (let i = start; i < mix.length; i++){
+  if (typeof mix[i] === "string" || mix[i] === 1 ){
+    continue
+  }
+  console.log(mix[i]);
+}
+// Output
+2
+3
+4
+//////////////////////
+let friends = ["Ahmed", "Sayed", "Ali", 1, 2, "Mahmoud", "Amany"];
+let index = 0;
+let counter = 0;
+
+
+//While Loop not the best option here.
+while(index < friends.length){
+    index++;
+    if(friends[index][friends.indexOf('Ahmed')] === 'A' || typeof friends[index] === 'number'){
+      continue;
+    }
+    console.log(`${counter += 1} => ${friends[index]}`);
+}
+
+//For Loop better option for this example.
+for (; index < friends.length; index++){
+    if(friends[index][friends.indexOf('Ahmed')] === 'A' || typeof friends[index] === 'number'){
+      continue
+    }
+    console.log(`${counter += 1} => ${friends[index]}`);
+}
+
+// Output
+"1 => Sayed"
+"2 => Mahmoud"
