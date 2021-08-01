@@ -838,7 +838,7 @@ while(index < friends.length){
 //For Loop better option for this example.
 for (; index < friends.length; index++){
     if(friends[index][friends.indexOf('Ahmed')] === 'A' || typeof friends[index] === 'number'){
-      continue
+      continue;
     }
     console.log(`${counter += 1} => ${friends[index]}`);
 }
