@@ -970,13 +970,12 @@ createSelectBox(2000, 2021);
 
 function multiply(...numbers){
   let result = 1;
-
   for (let i = 0; i < numbers.length; i++){
       if (typeof numbers[i] === 'number'){
           result *= Math.floor(numbers[i]);
       }
   }
-  console.log(result);
+  return `Final Result Is ${result}`;
 }
 
 multiply(10, 20); // 200
