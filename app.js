@@ -1151,3 +1151,43 @@ let clearDubs = myString
 
 console.log(clearDubs);
 /////////////////////////
+
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+
+let solution = myString
+  .split("")
+  .filter((ele) => isNaN(parseInt(ele)))
+  .map((ele) => (ele === "_" || ele === "," ? "" : ele))
+  .slice(4, 38)
+  .reduce((a, b) => a + b);
+
+console.log(solution); // Elzero Web School
+/////////////////
+
+let myArray = ["E", "l", "z", ["e", "r"], "o"];
+
+function flatten(arr) {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(
+      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+    );
+  }, []);
+}
+
+console.log(flatten(myArray).join(""));
+///////////////
+let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+let nums = numsAndStrings
+  .filter((ele) => !isNaN(parseInt(ele)))
+  .map((ele) => -ele);
+console.log(nums);
+/////////////
+let nums = [2, 12, 11, 5, 10, 1, 99];
+
+let sum = nums.reduce(function (acc, cur) {
+  return cur % 2 === 0 ? acc * cur : acc + cur;
+}, 1);
+
+console.log(sum);
+/////////////
